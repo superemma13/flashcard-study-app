@@ -1,0 +1,111 @@
+/* Generate Flashcards Styles */
+
+.generate-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+}
+
+.generate-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.generate-header a {
+  background: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  color: #667eea;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.generate-header h1 {
+  color: white;
+  flex: 1;
+}
+
+.generate-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+}
+
+.generate-form textarea {
+  resize: vertical;
+  font-family: 'Courier New', monospace;
+  font-size: 0.95rem;
+}
+
+.generate-form button {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-size: 1.1rem;
+}
+
+.generate-form button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* Generated Cards */
+.generated-cards {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.generated-cards h2 {
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.cards-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.generated-card {
+  border: 2px solid #e0e0e0;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  background: #f9f9f9;
+  transition: all 0.3s ease;
+}
+
+.generated-card:hover {
+  border-color: #667eea;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+}
+
+.card-question,
+.card-answer {
+  margin-bottom: 1rem;
+}
+
+.card-question strong,
+.card-answer strong {
+  color: #667eea;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+
+.card-question {
+  line-height: 1.5;
+  color: #333;
+}
+
+.card-answer {
+  line-height: 1.5;
+  color: #666;
+  font-style: italic;
+}
