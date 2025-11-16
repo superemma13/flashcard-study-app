@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "api.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "50mb",
+        "runtime": "python3.11"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "api.py"
+    }
+  ],
+  "env": {
+    "DATABASE_URL": "@database_url",
+    "SECRET_KEY": "@secret_key",
+    "OLLAMA_API_URL": "@ollama_api_url"
+  }
+}

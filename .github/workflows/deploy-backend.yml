@@ -1,0 +1,30 @@
+name: Deploy Backend to Vercel
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'backend/**'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Deploy to Vercel
+        uses: BerniWittmann/setup-python-action@v1
+        with:
+          python-version: '3.11'
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel
+
+      - name: Deploy with Vercel
+        working-directory: ./backend
+        run: vercel --prod
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
